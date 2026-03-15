@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <style>
+      /* ── Reset ── */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ── Page ── */
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 24px;
+        color: #333;
+      }
+
+      /* ── Input Area ── */
+      .input-area {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .input-area input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .input-area button {
+        padding: 10px 18px;
+        font-size: 16px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* ── Task List ── */
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 12px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      li span {
+        flex: 1;
+        font-size: 16px;
+      }
+
+      /* ── Buttons ── */
+      li button {
+        padding: 6px 12px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .btn-done {
+        background: #2196f3;
+      }
+      .btn-edit {
+        background: #ff9800;
+      }
+      .btn-delete {
+        background: #f44336;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo App</h1>
+
+      <!-- Input -->
+      <div class="input-area">
+        <input type="text" id="taskInput" placeholder="Enter a task..." />
+        <button onclick="addTask()">Add</button>
+      </div>
+
+      <!-- Task List -->
+      <ul id="taskList"></ul>
+    </div>
+    
+    <script>
+      const API = "http://localhost:5000/api/tasks";
+
+      // TODO 1: Fetch all tasks from the API and call renderTasks()
+      function fetchTasks() {}
+
+      // TODO 2: Loop through tasks array and create <li> for each task
+      function renderTasks(tasks) {}
+
+      // TODO 3: Get input value, POST to API, then call fetchTasks()
+      function addTask() {}
+
+      // TODO 4: Send PUT request to toggle completed true/false
+      function toggleDone(id, completed) {}
+
+      // TODO 5: Send PUT request with new title
+      function updateTask(id, newTitle) {}
+
+      // TODO 6: Send DELETE request, then call fetchTasks()
+      function deleteTask(id) {}
+
+      // Run on page load
+      fetchTasks();
+    </script>
+  </body>
+</html>

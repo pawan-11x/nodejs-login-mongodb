@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background: url('login_form.png') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #main {
+            border: none;
+            padding-top: 150px;
+            background-color: transparent;
+
+        }
+
+        .main {
+            border: solid 4px;
+            border-radius: 10px;
+            margin: auto 580px;
+            padding-left: 60px;
+            backdrop-filter: blur(50px);
+            height: 400px;
+            width: 300px;
+        }
+
+        .main1 input {
+            padding: 4px 4px 4px 10px;
+            border-radius: 10px;
+        }
+
+        .main1 {
+            padding: 7px;
+            padding-left: 25px;
+        }
+
+        button {
+            padding: 5px 100px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .main3 {
+            display: inline;
+            padding-right: 60px;
+            margin-left: -20px;
+        }
+
+        .main11 {
+            display: inline;
+        }
+
+        .btn p a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main11 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        h1 {
+            padding-left: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="main">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                <div class="main1">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="main1">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="main3">
+                    <input type="checkbox">remember me
+                </div>
+                <div class="main11">
+                    <a href="bhool.html" target="_blank">forget password</a>
+                </div><br>
+                <br>
+                <button type="submit">Login</button>
+                <div class="btn">
+                    <p> Don't have an account? <a href="registration_form.html" target="_blank">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

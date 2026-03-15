@@ -2,103 +2,212 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        body {
-            background: url('login_form.png') no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Login Form</title>
 
-        #main {
-            border: none;
-            padding-top: 150px;
-            background-color: transparent;
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        }
+<style>
 
-        .main {
-            border: solid 4px;
-            border-radius: 10px;
-            margin: auto 580px;
-            padding-left: 60px;
-            backdrop-filter: blur(50px);
-            height: 400px;
-            width: 300px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 
-        .main1 input {
-            padding: 4px 4px 4px 10px;
-            border-radius: 10px;
-        }
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:url('login_form.png') no-repeat center/cover;
+overflow:hidden;
+}
 
-        .main1 {
-            padding: 7px;
-            padding-left: 25px;
-        }
+body::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:linear-gradient(#00e1ff,#00ffff);
+border-radius:50%;
+filter:blur(120px);
+animation:move1 8s infinite alternate;
+}
 
-        button {
-            padding: 5px 100px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+body::after{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:linear-gradient(#ff00ff,#ff0080);
+border-radius:50%;
+filter:blur(120px);
+animation:move2 10s infinite alternate;
+}
 
-        .main3 {
-            display: inline;
-            padding-right: 60px;
-            margin-left: -20px;
-        }
+@keyframes move1{
+from{transform:translate(-200px,-200px);}
+to{transform:translate(200px,200px);}
+}
 
-        .main11 {
-            display: inline;
-        }
+@keyframes move2{
+from{transform:translate(200px,-200px);}
+to{transform:translate(-200px,200px);}
+}
 
-        .btn p a {
-            color: white;
-            text-decoration: none;
-        }
 
-        .main11 a {
-            text-decoration: none;
-            color: white;
-        }
+.main{
+width:350px;
+padding:40px;
+border-radius:20px;
+backdrop-filter: blur(25px);
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.3);
+box-shadow:0 0 30px rgba(0,0,0,0.4);
+transition:0.4s;
+animation:fadeIn 1.5s ease;
+z-index:1;
+}
 
-        h1 {
-            padding-left: 75px;
-        }
-    </style>
+.main:hover{
+transform:scale(1.05);
+box-shadow:0 0 40px #00e1ff;
+}
+
+
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+text-align:center;
+margin-bottom:25px;
+color:white;
+letter-spacing:2px;
+}
+
+
+
+.main1{
+position:relative;
+margin-bottom:20px;
+}
+
+.main1 input{
+width:100%;
+padding:12px 40px 12px 15px;
+border-radius:30px;
+border:none;
+outline:none;
+font-size:16px;
+transition:0.4s;
+}
+
+
+.main1 input:focus{
+box-shadow:0 0 15px #00e1ff;
+transform:scale(1.03);
+}
+
+.main1 i{
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+color:black;
+}
+
+
+
+.options{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+margin-bottom:20px;
+color:white;
+}
+
+.options a{
+color:#00e1ff;
+text-decoration:none;
+transition:0.3s;
+}
+
+.options a:hover{
+color:#00ffff;
+text-shadow:0 0 10px #00e1ff;
+}
+
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#00e1ff;
+font-size:16px;
+cursor:pointer;
+transition:0.4s;
+font-weight:bold;
+}
+
+button:hover{
+background:#00bcd4;
+transform:scale(1.08);
+box-shadow:0 0 20px #00e1ff;
+}
+
+
+.btn{
+text-align:center;
+margin-top:20px;
+color:white;
+}
+
+.btn a{
+color:#00e1ff;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn a:hover{
+color:#00ffff;
+text-shadow:0 0 10px #00e1ff;
+}
+</style>
 </head>
-
 <body>
-    <div id="main">
-        <div class="main">
-            <h1>Login</h1>
-            <form action="/login" method="POST">
-                <div class="main1">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <i class='bx bx-user'></i>
-                </div>
-                <div class="main1">
-                    <input type="password" name="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="main3">
-                    <input type="checkbox">remember me
-                </div>
-                <div class="main11">
-                    <a href="bhool.html" target="_blank">forget password</a>
-                </div><br>
-                <br>
-                <button type="submit">Login</button>
-                <div class="btn">
-                    <p> Don't have an account? <a href="registration_form.html" target="_blank">Register</a></p>
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="main">
+<h1>Login</h1>
+<form action="/login" method="POST">
+<div class="main1">
+<input type="text" name="username" placeholder="Username" required>
+<i class='bx bx-user'></i>
+</div>
+<div class="main1">
+<input type="password" name="password" placeholder="Password" required>
+<i class='bx bxs-lock-alt'></i>
+</div>
+<div class="options">
+<label><input type="checkbox"> Remember me</label>
+<a href="bhool.html">Forget password</a>
+</div>
+<button type="submit">Login</button>
+<div class="btn">
+<p>Don't have an account? <a href="registration_form.html">Register</a></p>
+</div>
+</form>
+</div>
 </body>
-
 </html>

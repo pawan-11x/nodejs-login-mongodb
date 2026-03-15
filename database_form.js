@@ -8,11 +8,11 @@ const app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname));   // serve files from same folder
 
-mongoose.connect("mongodb://localhost:27017/mydb")
+mongoose.connect("mongodb://localhost:27017/login_DB")
 .then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.log(err));
 
-const schema = new mongoose.Schema({
+const schema = new mongoose.Schema({ 
     username:String,
     password:String
 });
